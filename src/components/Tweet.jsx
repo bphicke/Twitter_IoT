@@ -13,7 +13,7 @@ export default class Tweet extends Component {
           screen_name={this.props.tweet.user.screen_name}
         />
         <hr style={divider} />
-        <TweetBody />
+        <TweetBody text={this.props.tweet.text} />
       </div>
     );
   }

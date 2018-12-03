@@ -17,7 +17,7 @@ export default class Background extends Component {
 
 const backgroundStyle = {
   width: "auto",
-  height: "900px",
+  height: "auto",
   backgroundColor: "#ededed"
 };
 const flexContainer = {
