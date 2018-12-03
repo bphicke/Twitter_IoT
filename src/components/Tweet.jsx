@@ -4,7 +4,6 @@ import TweetBody from "./TweetBody.jsx";
 
 export default class Tweet extends Component {
   render() {
-    console.log(this.props.tweet);
     return (
       <div style={tweetCardStyle}>
         <TweetHeader

@@ -10,6 +10,27 @@ class Home extends Component {
       .get("http://localhost:4000/tweets")
       .then(data => {
         this.props.actions.getTweetsAction(data.data.statuses);
+        return data;
+      })
+      .then(tweets => {
+        let wordCount = {};
+        let words;
+        tweets.data.statuses.forEach(tweet => {
+          words = tweet.text.split(" ");
+          words.forEach(word => {
+            wordCount[word] = wordCount[word] + 1 || 1;
+          });
+        });
+        for (let key in wordCount) {
+          if (wordCount[key] < 4) {
+            delete wordCount[key];
+          }
+        }
+        let sortedWords = Object.keys(wordCount);
+        sortedWords.sort((a, b) => {
+          return wordCount[a] - wordCount[b] ? -1 : 1;
+        });
+        console.log(sortedWords);
       })
       .catch(error => console.log("error", error));
   }
