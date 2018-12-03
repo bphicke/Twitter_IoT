@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Background from "../components/Background.jsx";
 export default class Home extends Component {
   componentDidMount() {
     console.log(process.env);
@@ -12,6 +13,6 @@ export default class Home extends Component {
   }
 
   render() {
-    return <div>Hello World!</div>;
+    return <Background />;
   }
 }
