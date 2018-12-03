@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header.jsx";
-import Tweet from "./Tweet";
+import TweetsContainer from "../containers/TweetsContainer.jsx";
 
 export default class Background extends Component {
   render() {
@@ -8,24 +8,7 @@ export default class Background extends Component {
       <div style={backgroundStyle}>
         <Header />
         <div style={flexContainer}>
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
-          <Tweet />
+          <TweetsContainer />
         </div>
       </div>
     );

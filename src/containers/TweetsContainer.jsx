@@ -2,20 +2,10 @@ import React, { Component } from "react";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import * as Actions from "../actions";
-import axios from "axios";
-import Background from "../components/Background.jsx";
-class Home extends Component {
-  componentDidMount() {
-    axios
-      .get("http://localhost:4000/tweets")
-      .then(data => {
-        this.props.actions.getTweetsAction(data.data.statuses);
-      })
-      .catch(error => console.log("error", error));
-  }
-
+import Tweets from "../components/Tweets.jsx";
+class TweetsContainer extends Component {
   render() {
-    return <Background />;
+    return <Tweets tweets={this.props.tweets} />;
   }
 }
 
@@ -30,4 +20,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Home);
+)(TweetsContainer);
