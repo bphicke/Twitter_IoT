@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Header from "./Header.jsx";
+import DataVisualization from "./DataVisualization.jsx";
 import TweetsContainer from "../containers/TweetsContainer.jsx";
 
 export default class Background extends Component {
@@ -7,6 +8,7 @@ export default class Background extends Component {
     return (
       <div style={backgroundStyle}>
         <Header />
+        <DataVisualization className={"chart"} />
         <div style={flexContainer}>
           <TweetsContainer />
         </div>
