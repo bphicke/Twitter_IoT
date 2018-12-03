@@ -51,6 +51,7 @@
     "sass-loader": "7.1.0",
     "style-loader": "0.23.0",
     "terser-webpack-plugin": "1.1.0",
+    "twitter": "^1.7.1",
     "url-loader": "1.1.1",
     "webpack": "4.19.1",
     "webpack-dev-server": "3.1.9",
@@ -60,7 +61,8 @@
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
-    "test": "node scripts/test.js"
+    "test": "node scripts/test.js",
+    "start:api": "node src/srv/server.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -111,5 +113,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "devDependencies": {
+    "cors": "^2.8.5"
   }
 }

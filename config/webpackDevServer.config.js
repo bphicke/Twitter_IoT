@@ -7,6 +7,7 @@ const ignoredFiles = require('react-dev-utils/ignoredFiles');
 const config = require('./webpack.config.dev');
 const paths = require('./paths');
 const fs = require('fs');
+const cors = require('cors');
 
 const protocol = process.env.HTTPS === 'true' ? 'https' : 'http';
 const host = process.env.HOST || '0.0.0.0';
@@ -84,11 +85,11 @@ module.exports = function(proxy, allowedHost) {
     public: allowedHost,
     proxy,
     before(app, server) {
+      app.use(cors());
       if (fs.existsSync(paths.proxySetup)) {
         // This registers user provided middleware for proxy reasons
         require(paths.proxySetup)(app);
       }
-
       // This lets us fetch source contents from webpack for the error overlay
       app.use(evalSourceMapMiddleware(server));
       // This lets us open files from the runtime error overlay.
