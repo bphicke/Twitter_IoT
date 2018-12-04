@@ -4,20 +4,9 @@ import { connect } from "react-redux";
 import * as Actions from "../actions";
 import axios from "axios";
 import Background from "../components/Background.jsx";
+import stopwords from "../components/stopwords";
 class Home extends Component {
   componentDidMount() {
-    const badWords = {
-      a: true,
-      of: true,
-      are: true,
-      The: true,
-      can: true,
-      at: true,
-      For: true,
-      from: true,
-      that: true,
-      I: true
-    };
     axios
       .get("http://localhost:4000/tweets")
       .then(data => {
@@ -36,13 +25,13 @@ class Home extends Component {
         for (let key in wordCount) {
           if (wordCount[key] < 4) {
             delete wordCount[key];
-          } else if (badWords[key]) {
+          } else if (stopwords[key]) {
             delete wordCount[key];
           }
         }
         let sortedWords = Object.keys(wordCount);
         sortedWords.sort((a, b) => {
-          return wordCount[a] - wordCount[b] ? -1 : 1;
+          return wordCount[a] > wordCount[b] ? -1 : 1;
         });
         let sortedWordObjects = [];
         let count = 0;
