@@ -8,7 +8,9 @@ export default class Background extends Component {
     return (
       <div style={backgroundStyle}>
         <Header />
-        <DataVisualizationContainer />
+        <div style={aligner}>
+          <DataVisualizationContainer />
+        </div>
         <div style={flexContainer}>
           <TweetsContainer />
         </div>
@@ -25,4 +27,10 @@ const backgroundStyle = {
 const flexContainer = {
   display: "flex",
   flexWrap: "wrap"
+};
+
+const aligner = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center"
 };

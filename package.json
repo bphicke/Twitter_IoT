@@ -15,8 +15,8 @@
     "bfj": "6.1.1",
     "case-sensitive-paths-webpack-plugin": "2.1.2",
     "chalk": "2.4.1",
+    "concurrently": "^4.1.0",
     "css-loader": "1.0.0",
-    "d3": "^5.7.0",
     "dotenv": "6.0.0",
     "dotenv-expand": "4.2.0",
     "eslint": "5.6.0",
@@ -64,7 +64,8 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js",
-    "start:api": "node src/srv/server.js"
+    "start:api": "node src/srv/server.js",
+    "meshify": "concurrently 'npm run start:api' 'npm run start'"
   },
   "eslintConfig": {
     "extends": "react-app"
