@@ -1,5 +1,14 @@
 This project was created with [Create React App](https://github.com/facebook/create-react-app) and then ejected.
 
+## Before you begin
+
+create a .env file in the root.
+add the following values from your Twitter dev account to the .env file:
+CONSUMER_KEY=
+CONSUMER_SECRET=
+TOKEN=
+TOKEN_SECRET=
+
 ## Available Scripts
 
 In the project directory, you can run:
