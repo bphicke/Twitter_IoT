@@ -1,1 +1,2 @@
 export const NEW_TWEET_ACTION = 'NEW_TWEET_ACTION';
+export const PARETO_ACTION = 'PARETO_ACTION';
