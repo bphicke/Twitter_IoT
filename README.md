@@ -4,10 +4,10 @@ This project was created with [Create React App](https://github.com/facebook/cre
 
 create a .env file in the root.
 add the following values from your Twitter dev account to the .env file:
-CONSUMER_KEY=
-CONSUMER_SECRET=
-TOKEN=
-TOKEN_SECRET=
+###CONSUMER_KEY=
+###CONSUMER_SECRET=
+###TOKEN=
+###TOKEN_SECRET=
 
 ## Available Scripts
 
